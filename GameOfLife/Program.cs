@@ -1,9 +1,8 @@
 ﻿using System;
 using SFML.Graphics;
 using SFML.Window;
-using SFML_Test;
 
-namespace SFML_Test
+namespace GameOfLife
 {
     static class Program
     {
@@ -20,9 +19,10 @@ namespace SFML_Test
             app.Closed += new EventHandler(OnClose);
 
             //init grid
-            int size = 10;
+            int size = 150;
             Grid g = new Grid(size);
-            g.InitRandom(2); 
+            g = InitStratege.Init(0, g);
+
 
             /*Print grid */
             for(int i = 0; i < size; i++)

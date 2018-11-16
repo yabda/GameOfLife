@@ -1,5 +1,5 @@
 
-namespace SFML_Test
+namespace GameOfLife
 {
     class Cell
     {
