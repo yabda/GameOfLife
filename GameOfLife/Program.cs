@@ -1,6 +1,8 @@
 ﻿using System;
 using SFML.Graphics;
 using SFML.Window;
+using SFML;
+using SFML.System;
 
 namespace GameOfLife
 {
@@ -15,9 +17,10 @@ namespace GameOfLife
         static void Main()
         {
             // Create the main window
-            RenderWindow app = new RenderWindow(new VideoMode(800, 600), "SFML Works!");
+            RenderWindow app = new RenderWindow(new VideoMode(750, 750), "SFML Works!");
             app.Closed += new EventHandler(OnClose);
-
+                
+           
             //init grid
             int size = 150;
             Grid g = new Grid(size);
@@ -36,7 +39,9 @@ namespace GameOfLife
             }
 
 
-            Color windowColor = new Color(0, 255, 0);
+            //creation of drawable object
+            DrawableObject matrice = Decorator.Decorate(g);
+
             // Start the game loop
             while (app.IsOpen)
             {
@@ -44,7 +49,9 @@ namespace GameOfLife
                 app.DispatchEvents();
 
                 // Clear screen
-                app.Clear(windowColor);
+                app.Clear();
+
+                app.Draw(matrice);
 
                 // Update the window
                 app.Display();

@@ -7,7 +7,7 @@ namespace GameOfLife
     {
                
         public Cell[,] Cells { get; set; }
-        private int size;
+        public int size { get; set; }
 
         public Grid(int size)
         {
