@@ -1,6 +1,7 @@
 ﻿using System;
 using SFML.Graphics;
 using SFML.Window;
+using SFML_Test;
 
 namespace SFML_Test
 {
@@ -17,6 +18,23 @@ namespace SFML_Test
             // Create the main window
             RenderWindow app = new RenderWindow(new VideoMode(800, 600), "SFML Works!");
             app.Closed += new EventHandler(OnClose);
+
+            //init grid
+            int size = 10;
+            Grid g = new Grid(size);
+            g.InitRandom(2); 
+
+            /*Print grid */
+            for(int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    String value = g.Cells[i, j].Alive ? "1" : "0";
+                    Console.Write(value+"  ");
+                }
+                Console.WriteLine("");
+            }
+
 
             Color windowColor = new Color(0, 255, 0);
             // Start the game loop

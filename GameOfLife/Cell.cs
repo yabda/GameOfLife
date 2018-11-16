@@ -1,20 +1,18 @@
+
 namespace SFML_Test
 {
-    static class Cell
+    class Cell
     {
-        Tuple<int, int> position { get;set; }
-        bool isAlive { get; set; }
-
-        Cell()
+        public bool Alive { get; set; }
+        
+        public Cell()
         {
-            position = (0, 0);
-            isAlive = false;
-        }
-        Cell(Tuple<int,int> pos, bool isAlive)
-        {
-            position = pos;
-            this.isAlive = isAlive;
+            Alive = false;
         }
 
+        public Cell(bool isAlive)
+        {
+            this.Alive = isAlive;
+        }
     }
 }
