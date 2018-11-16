@@ -23,7 +23,7 @@ namespace GameOfLife
             Grid g = new Grid(size);
             g = InitStratege.Init(0, g);
 
-
+            
             /*Print grid */
             for(int i = 0; i < size; i++)
             {
