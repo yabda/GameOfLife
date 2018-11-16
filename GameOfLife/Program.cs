@@ -24,21 +24,9 @@ namespace GameOfLife
             //init grid
             int size = 150;
             Grid g = new Grid(size);
-            g = InitStratege.Init(0, g);
+            g = InitStratege.Init(2, g);
 
             
-            /*Print grid */
-            for(int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    String value = g.Cells[i, j].Alive ? "1" : "0";
-                    Console.Write(value+"  ");
-                }
-                Console.WriteLine("");
-            }
-
-
             //creation of drawable object
             DrawableObject matrice = Decorator.Decorate(g);
 

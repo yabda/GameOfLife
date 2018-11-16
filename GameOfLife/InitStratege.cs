@@ -17,6 +17,14 @@ namespace GameOfLife
                 strategy = new RandomInit();
                
             }
+            if(stratID == 1)
+            {
+                strategy = new DamierInit();
+            }
+            if (stratID == 2)
+            {
+                strategy = new TableInit();
+            }
             else //default
             {
                 strategy = new RandomInit();

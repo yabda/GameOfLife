@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DamierInit.cs" />
     <Compile Include="Decorator.cs" />
     <Compile Include="DrawableObject.cs" />
     <Compile Include="Cell.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="InitStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableInit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
