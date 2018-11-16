@@ -34,16 +34,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="sfmlnet-audio-2">
-      <HintPath>..\..\..\..\..\..\SFML\lib\sfmlnet-audio-2.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Bin\SFML.Net-2.2\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-graphics-2">
-      <HintPath>..\..\..\..\..\..\SFML\lib\sfmlnet-graphics-2.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Bin\SFML.Net-2.2\lib\sfmlnet-graphics-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-system-2">
-      <HintPath>..\..\..\..\..\..\SFML\lib\sfmlnet-system-2.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Bin\SFML.Net-2.2\lib\sfmlnet-system-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-window-2">
-      <HintPath>..\..\..\..\..\..\SFML\lib\sfmlnet-window-2.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Bin\SFML.Net-2.2\lib\sfmlnet-window-2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -8,7 +8,6 @@ namespace SFML_Test
     {
         static void OnClose(object sender, EventArgs e)
         {
-            // Close the window when OnClose event is received
             RenderWindow window = (RenderWindow)sender;
             window.Close();
         }
@@ -19,8 +18,7 @@ namespace SFML_Test
             RenderWindow app = new RenderWindow(new VideoMode(800, 600), "SFML Works!");
             app.Closed += new EventHandler(OnClose);
 
-            Color windowColor = new Color(0, 192, 255);
-
+            Color windowColor = new Color(0, 255, 0);
             // Start the game loop
             while (app.IsOpen)
             {
