@@ -30,23 +30,7 @@ namespace GameOfLife
         /*Initialise la grille avec {proba}% de chance pour que chaque cellule soit en vie*/
         public void InitRandom(int proba)
         {
-            Random rand = new Random();
 
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    if (rand.Next(0, 99) <= proba-1)
-                    {
-                        Cells[i, j] = new Cell(true);
-                    }
-                    else
-                    {
-                        Cells[i, j] = new Cell(false);
-                    }
-
-                }
-            }
         }
     }
 }

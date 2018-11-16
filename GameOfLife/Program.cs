@@ -57,13 +57,11 @@ namespace GameOfLife
             //init grid
             int size = 150;
             Grid g = new Grid(size);
-            g.InitRandom(2); 
+
+            g = InitStratege.Init(2, g);
 
 
-            /*Print grid */
             
-
-
             //creation of drawable object
             DrawableObject matrice = Decorator.Decorate(g);
             Clock c = new Clock();
