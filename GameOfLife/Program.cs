@@ -13,6 +13,39 @@ namespace GameOfLife
             RenderWindow window = (RenderWindow)sender;
             window.Close();
         }
+         
+        public static Grid Calculnextstep(Grid g)
+        {
+            Grid newgrid = new Grid(g.size);
+            //penser a faire les cotés
+            for (uint i = 1; i < g.size-1; ++i)
+                for (uint j = 1; j < g.size-1; ++j)
+                {
+                    int vivant = 0;
+                    if (g.Cells[i - 1, j - 1].Alive) vivant++;
+                    if (g.Cells[i, j - 1].Alive) vivant++;
+                    if (g.Cells[i + 1, j - 1].Alive) vivant++;
+                    if (g.Cells[i - 1 , j].Alive) vivant++;
+                    if (g.Cells[i + 1, j].Alive) vivant++;
+                    if (g.Cells[i + 1, j + 1].Alive) vivant++;
+                    if (g.Cells[i + 1, j - 1].Alive) vivant++;
+                    if (g.Cells[i , j + 1].Alive) vivant++;
+                       
+                    if (0 < vivant && vivant < 3)
+                    {
+                        newgrid.Cells[i, j] = new Cell(true);
+                    }
+                    if( vivant > 5 || vivant == 0)
+                    {
+                        newgrid.Cells[i, j] = new Cell(false);
+
+                    }
+                }
+
+            
+            return newgrid;
+        }
+
 
         static void Main()
         {
@@ -28,19 +61,12 @@ namespace GameOfLife
 
 
             /*Print grid */
-            for(int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    String value = g.Cells[i, j].Alive ? "1" : "0";
-                    Console.Write(value+"  ");
-                }
-                Console.WriteLine("");
-            }
+            
 
 
             //creation of drawable object
             DrawableObject matrice = Decorator.Decorate(g);
+            Clock c = new Clock();
 
             // Start the game loop
             while (app.IsOpen)
@@ -48,10 +74,18 @@ namespace GameOfLife
                 // Process events
                 app.DispatchEvents();
 
+                if (c.ElapsedTime.AsMilliseconds() > 5)
+                {
+                    g = Calculnextstep(g);
+                    matrice=Decorator.Decorate(g);
+                    c.Restart();
+                }
+                
                 // Clear screen
                 app.Clear();
 
                 app.Draw(matrice);
+                
 
                 // Update the window
                 app.Display();
