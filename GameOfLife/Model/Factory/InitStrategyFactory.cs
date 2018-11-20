@@ -4,10 +4,10 @@ namespace GameOfLife.Model.Factory
 {
     public enum InitType
     {
-        Damier,
-        Random,
-        Table,
-        File
+        Random = 1,
+        Damier = 2,
+        Table = 3,
+        File = 4
     }
 
     /**
