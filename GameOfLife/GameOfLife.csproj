@@ -55,17 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DamierInit.cs" />
-    <Compile Include="Decorator.cs" />
-    <Compile Include="DrawableObject.cs" />
-    <Compile Include="Cell.cs" />
-    <Compile Include="InitStratege.cs" />
-    <Compile Include="RandomInit.cs" />
-    <Compile Include="Grid.cs" />
-    <Compile Include="InitStrategy.cs" />
+    <Compile Include="Configuration\Initialisation\DamierInit.cs" />
+    <Compile Include="View\Decorator.cs" />
+    <Compile Include="View\DrawableObject.cs" />
+    <Compile Include="Model\Cell.cs" />
+    <Compile Include="Configuration\Initialisation\InitStratege.cs" />
+    <Compile Include="Configuration\Initialisation\RandomInit.cs" />
+    <Compile Include="Model\Grid.cs" />
+    <Compile Include="Configuration\Initialisation\InitStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TableInit.cs" />
+    <Compile Include="Configuration\Initialisation\TableInit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -98,6 +98,9 @@
     <Content Include="OpenTK.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\Laws\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
