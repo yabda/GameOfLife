@@ -18,15 +18,16 @@ namespace GameOfLife.View
         public Grid grid { get; set; } //Grille de cellule
         static event EventHandler Observable; //Handler d'évènements
         public DrawableObject matrice { get; set; } //Matrice de cellule à draw
-        public Configuration.Configuration conf { get; set; } //Configuration du système
+        public static Configuration.Configuration conf { get; set; } //Configuration du système
 
         //Fonction d'initialisation du système
         public void Init(Configuration.Configuration conf)
         {
-            this.conf = conf;
+            Screen.conf = conf;
 
             App = new RenderWindow(new VideoMode(conf.WindowSize.X, conf.WindowSize.Y), "LA VIE"); //Construction de la fenetre
             App.Closed += new EventHandler(OnClose); //Ajout de l'évènement de fermeture
+            App.KeyPressed += OnKeyPressed;
 
             //Construction de la grille
             grid = InitStratege.Init(conf.InitStrategy,conf.Size);
@@ -42,26 +43,58 @@ namespace GameOfLife.View
             window.Close();
         }
 
+        static void OnKeyPressed(object sender, KeyEventArgs e)
+        {
+            RenderWindow window = (RenderWindow)sender;
+
+            SFML.Graphics.View v = window.GetView();
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Add))
+                v.Zoom(0.75f);
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Subtract))
+                v.Zoom(1.25f);
+
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Return))
+                conf.Speed += 50;
+            if (Keyboard.IsKeyPressed(Keyboard.Key.Space) && conf.Speed - 50 > 0)
+                conf.Speed -= 50;
+
+            window.SetView(v);
+
+        }
+
         public void Run()
         {
             //Construction de la première matrice
             Clock c = new Clock();
             matrice = Decorator.Decorate(grid, conf.pixelSize);
 
+
             //Boucle d'affichage
             while (App.IsOpen)
             {
                 //Gestion des évènements fenêtre
                 App.DispatchEvents();
+                SFML.Graphics.View v = App.GetView();
 
-                if (c.ElapsedTime.AsMilliseconds() > 1000.0 / conf.Speed) //Tous les X temps
+                if (Keyboard.IsKeyPressed(Keyboard.Key.Up))
+                    v.Move(new Vector2f(0.0f, -0.5f));
+                if (Keyboard.IsKeyPressed(Keyboard.Key.Down))
+                    v.Move(new Vector2f(0.0f, 0.5f));
+                if (Keyboard.IsKeyPressed(Keyboard.Key.Right))
+                    v.Move(new Vector2f(0.5f, 0.0f));
+                if (Keyboard.IsKeyPressed(Keyboard.Key.Left))
+                    v.Move(new Vector2f(-0.5f, 0.0f));
+                App.SetView(v);
+
+                if (c.ElapsedTime.AsMilliseconds() > conf.Speed) //Tous les X temps
                 {
                     Observable(this, new TickEvent()); //Envoit d'un event de tick
                     c.Restart(); //Restart de l'horloge
                 }
 
                 //CDD
-                App.Clear();
+                App.Clear(Color.Cyan);
                 App.Draw(matrice);
                 App.Display();
             } 
