@@ -6,7 +6,6 @@ namespace GameOfLife.Model
 {
     class Grid : IGrid
     {
-               
         public Cell[,] Cells { get; set; }
         public int Size { get; set; }
 
