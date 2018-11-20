@@ -10,6 +10,5 @@ namespace GameOfLife.Configuration.Initialisation
     interface InitStrategy
     {
         Grid Init(Grid g);
-
     }
 }

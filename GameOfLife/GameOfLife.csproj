@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Configuration\Initialisation\DamierInit.cs" />
+    <Compile Include="Configuration\Initialisation\FileInit.cs" />
     <Compile Include="Configuration\Laws\AloLaw.cs" />
     <Compile Include="Configuration\Laws\ConwayLaw.cs" />
     <Compile Include="Configuration\Laws\IntervenantLaw.cs" />
@@ -87,6 +88,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Configuration\Initialisation\InitFile.txt" />
+    <Content Include="Configuration\Initialisation\InitFull.txt" />
+    <Content Include="Configuration\Initialisation\InitNone.txt" />
     <Content Include="csfml-audio-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

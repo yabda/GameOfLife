@@ -11,9 +11,9 @@ namespace GameOfLife.Configuration.Initialisation
     {
         public Grid Init(Grid g) {
             
-            for (int i = 0; i < 150; i++)
+            for (int i = 0; i < g.Size; i++)
             {
-                for (int j = 0; j < 150; j++)
+                for (int j = 0; j < g.Size; j++)
                 {
                     if (j % 2 == 0 && i % 2 ==0)
                     {

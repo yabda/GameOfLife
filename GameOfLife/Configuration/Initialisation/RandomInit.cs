@@ -18,7 +18,7 @@ namespace GameOfLife.Configuration.Initialisation
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (rand.Next(0, 99) <=2)
+                    if (rand.Next(0, 99) <=40)
                     {
                         g.Cells[i, j] = new Cell(true);
                     }

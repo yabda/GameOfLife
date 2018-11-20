@@ -55,7 +55,7 @@ namespace GameOfLife.View
                 // Process events
                 App.DispatchEvents();
 
-                if (c.ElapsedTime.AsMilliseconds() > 1/Speed)
+                if (c.ElapsedTime.AsMilliseconds() > 1000/Speed)
                 {
                     Observable(this, new TickEvent());
                     c.Restart();
