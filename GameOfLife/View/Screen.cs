@@ -97,7 +97,6 @@ namespace GameOfLife.View
                 if (Over)
                 {
                     Console.Out.WriteLine("Fin du Game");
-                    Console.Write("coucou");
                     App.Close();
                 }
 
