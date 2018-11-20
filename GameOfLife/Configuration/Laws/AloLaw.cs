@@ -14,14 +14,14 @@ namespace GameOfLife.Configuration.Laws
         public Grid Update(Grid grid)
         {
             g = grid;
-            Grid newgrid = new Grid(g.size);
+            Grid newgrid = new Grid(g.Size);
             //penser a faire les cotés
-            for (uint i = 1; i < g.size - 1; ++i)
-                for (uint j = 1; j < g.size - 1; ++j)
+            for (uint i = 1; i < g.Size - 1; ++i)
+                for (uint j = 1; j < g.Size - 1; ++j)
                 {
                     
                     int nbAlive = 0;
-                    if (i != 0 && i != g.size && j != 0 && j != g.size)
+                    if (i != 0 && i != g.Size && j != 0 && j != g.Size)
                     {
                         if (g.Cells[i - 1, j - 1].Alive) nbAlive++; // check uppperLeft
                         if (g.Cells[i, j - 1].Alive) nbAlive++;
