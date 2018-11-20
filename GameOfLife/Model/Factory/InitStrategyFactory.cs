@@ -6,7 +6,8 @@ namespace GameOfLife.Model.Factory
     {
         Damier,
         Random,
-        Table
+        Table,
+        File
     }
 
     /**
@@ -24,6 +25,8 @@ namespace GameOfLife.Model.Factory
                     return new RandomInit();
                 case InitType.Table:
                     return new TableInit();
+                case InitType.File:
+                    return new FileInit();
                 default:
                     return new RandomInit();
             }
