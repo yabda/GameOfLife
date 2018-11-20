@@ -15,7 +15,7 @@ namespace GameOfLife.Configuration.Initialisation
         public Grid Init(int Size)
         {
 
-            var fileName = "InitAlo";
+            var fileName = "InitYanis";
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $@"../../Configuration/Initialisation/" + fileName + ".txt");
             string[] lines;
             lines = File.ReadAllLines(path);

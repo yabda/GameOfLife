@@ -22,7 +22,7 @@ namespace GameOfLife.Configuration
         public Configuration()
         {
             InitStrategy = InitStrategyFactory.GetStrategy(InitType.File);
-            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Intervenant);
+            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Conway);
             Size = 250;
             Speed = 1;
             WindowSize = new Vector2u(750, 750);
