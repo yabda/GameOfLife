@@ -7,7 +7,7 @@ namespace GameOfLife
         static void Main()
         {
             Configuration.Configuration config = new Configuration.Configuration();
-            config.pixelSize = 10;
+            config.ReadConfiguration();
 
             Screen app = new Screen();
             app.Init(config);
