@@ -14,5 +14,11 @@ namespace GameOfLife.Model
         {
             this.Alive = isAlive;
         }
+
+        public override bool Equals(object obj)
+        {
+            var cell = obj as Cell;
+            return cell != null && Alive == cell.Alive;
+        }
     }
 }

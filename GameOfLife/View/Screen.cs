@@ -16,9 +16,11 @@ namespace GameOfLife.View
     {
         private RenderWindow App; //Fenetre visible
         public Grid grid { get; set; } //Grille de cellule
+        public Grid previousGrid { get; set; }
         static event EventHandler Observable; //Handler d'évènements
         public DrawableObject matrice { get; set; } //Matrice de cellule à draw
         public static Configuration.Configuration conf { get; set; } //Configuration du système
+        public bool Over;
 
         //Fonction d'initialisation du système
         public void Init(Configuration.Configuration conf)
@@ -87,10 +89,16 @@ namespace GameOfLife.View
                     v.Move(new Vector2f(-0.5f, 0.0f));
                 App.SetView(v);
 
-                if (c.ElapsedTime.AsMilliseconds() > conf.Speed) //Tous les X temps
+                if (c.ElapsedTime.AsMilliseconds() > conf.Speed && !Over) //Tous les X temps
                 {
                     Observable(this, new TickEvent()); //Envoit d'un event de tick
                     c.Restart(); //Restart de l'horloge
+                }
+                if (Over)
+                {
+                    Console.Out.WriteLine("Fin du Game");
+                    Console.Write("coucou");
+                    App.Close();
                 }
 
                 //CDD

@@ -12,14 +12,14 @@ namespace GameOfLife.Configuration.Initialisation
 {
     class FileInit : InitStrategy
     {
-        public Grid Init(int Size)
+        public Grid Init(int Fichier)
         {
+            var fileName = "InitNone";
 
-            var fileName = "InitYanis";
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $@"../../Configuration/Initialisation/" + fileName + ".txt");
             string[] lines;
             lines = File.ReadAllLines(path);
-            Size = 0;
+            int Size = 0;
 
             foreach (var line in lines)
             {

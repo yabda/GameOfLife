@@ -1,6 +1,7 @@
 
 using GameOfLife.Model.Factory;
 using System;
+using System.Collections.Generic;
 
 namespace GameOfLife.Model
 {
@@ -20,5 +21,22 @@ namespace GameOfLife.Model
 
         public Grid() : this(150)
         {}
+
+        public override bool Equals(object obj)
+        {
+            var grid = obj as Grid;
+            for(int i = 0; i < Size; i++)
+            {
+                for(int j = 0; j < Size; j++)
+                {
+                    if (!(Cells[i, j].Alive == grid.Cells[i, j].Alive))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
+
 }

@@ -1,4 +1,5 @@
 ﻿using GameOfLife.View;
+using System;
 
 namespace GameOfLife
 {
@@ -12,6 +13,8 @@ namespace GameOfLife
             Screen app = new Screen();
             app.Init(config);
             app.Run();
+
+            Console.Read();
             
         } 
     } 

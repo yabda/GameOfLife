@@ -20,6 +20,7 @@ namespace GameOfLife.Configuration
             InitStrategy = InitStrategyFactory.GetStrategy(InitType.File);
             LawStrategy = LawStrategyFactory.GetStrategy(LawType.Conway);
             Size = 250;
+
             Speed = 1;
             WindowSize = new Vector2u(750, 750);
             pixelSize = 5;
@@ -71,6 +72,8 @@ namespace GameOfLife.Configuration
             Console.Out.WriteLine("Table (3)");
             Console.Out.WriteLine("File (4)");
             int initType = GetInteger("Choix de l'initialisation : ", 1);
+
+
             if (initType > 4) initType = 1;
             this.InitStrategy = InitStrategyFactory.GetStrategy((InitType)initType);
 
