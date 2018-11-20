@@ -16,18 +16,18 @@ namespace GameOfLife.View
         {
 
             int sizePixel = 5;
-            VertexArray matrice = new VertexArray(PrimitiveType.Quads, 4 * (uint)g.size * (uint)g.size);
-            for (uint i = 0; i < g.size; ++i)
-                for (uint j = 0; j < g.size; ++j)
+            VertexArray matrice = new VertexArray(PrimitiveType.Quads, 4 * (uint)g.Size * (uint)g.Size);
+            for (uint i = 0; i < g.Size; ++i)
+                for (uint j = 0; j < g.Size; ++j)
                 {
                     // on récupère le numéro de tuile courant
 
 
                     // on récupère un pointeur vers le quad à définir dans le tableau de vertex
-                    Vertex v0 = matrice[(i + j * (uint)g.size) * 4];
-                    Vertex v1 = matrice[(i + j * (uint)g.size) * 4 + 1];
-                    Vertex v2 = matrice[(i + j * (uint)g.size) * 4 + 2];
-                    Vertex v3 = matrice[(i + j * (uint)g.size) * 4 + 3];
+                    Vertex v0 = matrice[(i + j * (uint)g.Size) * 4];
+                    Vertex v1 = matrice[(i + j * (uint)g.Size) * 4 + 1];
+                    Vertex v2 = matrice[(i + j * (uint)g.Size) * 4 + 2];
+                    Vertex v3 = matrice[(i + j * (uint)g.Size) * 4 + 3];
 
                     // on définit ses quatre coins
                     v0.Position = new Vector2f(i * sizePixel, j * sizePixel);
@@ -52,10 +52,10 @@ namespace GameOfLife.View
                     v2.Color = pixelColor;
                     v3.Color = pixelColor;
 
-                    matrice[(i + j * (uint)g.size) * 4] = v0;
-                    matrice[(i + j * (uint)g.size) * 4 + 1] = v1;
-                    matrice[(i + j * (uint)g.size) * 4 + 2] = v2;
-                    matrice[(i + j * (uint)g.size) * 4 + 3] = v3;
+                    matrice[(i + j * (uint)g.Size) * 4] = v0;
+                    matrice[(i + j * (uint)g.Size) * 4 + 1] = v1;
+                    matrice[(i + j * (uint)g.Size) * 4 + 2] = v2;
+                    matrice[(i + j * (uint)g.Size) * 4 + 3] = v3;
 
                 }
             return new DrawableObject(matrice);

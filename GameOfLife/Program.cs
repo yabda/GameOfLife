@@ -62,10 +62,5 @@ namespace GameOfLife
                 app.Display();
             } //End game loop
         } //End Main()
-
-        private static Grid Calculnextstep(Grid g)
-        {
-            throw new NotImplementedException();
-        }
     } //End Program
 }

@@ -61,6 +61,10 @@
     <Compile Include="Configuration\Laws\LawStratege.cs" />
     <Compile Include="Configuration\Laws\LawStrategy.cs" />
     <Compile Include="Configuration\Laws\ProfLaw.cs" />
+    <Compile Include="Model\Factory\CellFactory.cs" />
+    <Compile Include="Model\Factory\GridFactory.cs" />
+    <Compile Include="Model\ICell.cs" />
+    <Compile Include="Model\IGrid.cs" />
     <Compile Include="View\Decorator.cs" />
     <Compile Include="View\DrawableObject.cs" />
     <Compile Include="Model\Cell.cs" />
@@ -104,6 +108,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Configuration\Laws\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
