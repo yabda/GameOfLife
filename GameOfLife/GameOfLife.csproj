@@ -55,8 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Configuration\Initialisation\DamierInit.cs" />
     <Compile Include="Model\Factory\CellFactory.cs" />
+    <Compile Include="Model\Factory\InitStrategyFactory.cs" />
     <Compile Include="Model\Factory\GridFactory.cs" />
     <Compile Include="Model\ICell.cs" />
     <Compile Include="Model\IGrid.cs" />
