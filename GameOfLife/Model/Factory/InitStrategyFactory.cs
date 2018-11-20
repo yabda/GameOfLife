@@ -1,9 +1,4 @@
 ﻿using GameOfLife.Configuration.Initialisation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameOfLife.Model.Factory
 {
@@ -14,6 +9,9 @@ namespace GameOfLife.Model.Factory
         Table
     }
 
+    /**
+     * Factory permettant de générer des stratégies d'initialisation
+     **/
     static class InitStrategyFactory
     {
         public static InitStrategy GetStrategy(InitType type)

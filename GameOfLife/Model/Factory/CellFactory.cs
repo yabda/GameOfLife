@@ -2,6 +2,9 @@
 
 namespace GameOfLife.Model.Factory
 {
+    /**
+     * Factory permettant de générer des cellules
+     **/
     static class CellFactory
     {
         public static Cell GetAlive()
