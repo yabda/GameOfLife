@@ -17,12 +17,12 @@ namespace GameOfLife.Configuration
 
         public Configuration()
         {
-            InitStrategy = InitStrategyFactory.GetStrategy(InitType.Random);
-            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Conway);
-            Size = 150;
-            Speed = 100;
+            InitStrategy = InitStrategyFactory.GetStrategy(InitType.File);
+            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Intervenant);
+            Size = 250;
+            Speed = 1;
             WindowSize = new Vector2u(750, 750);
-            pixelSize = 5;
+            pixelSize = 4;
         }
 
         private int GetInteger(string text, int defaut)

@@ -10,9 +10,10 @@ namespace GameOfLife.Configuration.Initialisation
      **/
     class RandomInit : InitStrategy
     {
-        public Grid Init(Grid g)
+        public Grid Init(int Size)
         {
             Random rand = new Random();
+            Grid g = GridFactory.GetGrid(Size);
 
             for (int i = 0; i < g.Size; i++)
                 for (int j = 0; j < g.Size; j++)

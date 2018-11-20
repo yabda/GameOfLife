@@ -29,8 +29,7 @@ namespace GameOfLife.View
             App.Closed += new EventHandler(OnClose); //Ajout de l'évènement de fermeture
 
             //Construction de la grille
-            grid = GridFactory.GetGrid(conf.Size); 
-            grid = InitStratege.Init(conf.InitStrategy,grid);
+            grid = InitStratege.Init(conf.InitStrategy,conf.Size);
 
             //Ajout de l'écoute de l'évenement de tick
             var next = new NextStep();
@@ -55,7 +54,7 @@ namespace GameOfLife.View
                 //Gestion des évènements fenêtre
                 App.DispatchEvents();
 
-                if (c.ElapsedTime.AsMilliseconds() > 1.0 / conf.Speed) //Tous les X temps
+                if (c.ElapsedTime.AsMilliseconds() > 1000.0 / conf.Speed) //Tous les X temps
                 {
                     Observable(this, new TickEvent()); //Envoit d'un event de tick
                     c.Restart(); //Restart de l'horloge

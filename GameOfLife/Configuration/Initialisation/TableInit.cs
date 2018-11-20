@@ -9,8 +9,9 @@ namespace GameOfLife.Configuration.Initialisation
      **/
     class TableInit : InitStrategy
     {
-        public Grid Init(Grid g)
+        public Grid Init(int Size)
         {
+            Grid g = GridFactory.GetGrid(Size);
             for (int i = 0; i < g.Size; i++)
                 for (int j = 0; j < g.Size; j++)
                 {
