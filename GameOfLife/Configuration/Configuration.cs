@@ -1,4 +1,6 @@
 ﻿using GameOfLife.Configuration.Initialisation;
+using GameOfLife.Configuration.Laws;
+using GameOfLife.Model.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +11,17 @@ namespace GameOfLife.Configuration
 {
     class Configuration
     {
-        public InitStrategy initStrategy { get; set; }
+        public InitStrategy InitStrategy { get; set; }
+        public LawStrategy LawStrategy { get; set; }
+        public int Size { get; set; }
+        public int Speed { get; set; }
 
         public Configuration()
         {
-            initStrategy = new RandomInit();
+            InitStrategy = InitStrategyFactory.GetStrategy(InitType.Random);
+            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Conway);
+            Size = 250;
+            Speed = 15;
         }
 
     }
