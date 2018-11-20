@@ -19,10 +19,10 @@ namespace GameOfLife.Configuration
         {
             InitStrategy = InitStrategyFactory.GetStrategy(InitType.File);
             LawStrategy = LawStrategyFactory.GetStrategy(LawType.Intervenant);
-            Size = 250;
+            Size = 150;
             Speed = 1;
             WindowSize = new Vector2u(750, 750);
-            pixelSize = 4;
+            pixelSize = 5;
         }
 
         private int GetInteger(string text, int defaut)
