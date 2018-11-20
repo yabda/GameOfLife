@@ -63,6 +63,7 @@
     <Compile Include="Configuration\Laws\LawStrategy.cs" />
     <Compile Include="Configuration\Laws\ProfLaw.cs" />
     <Compile Include="Model\Factory\CellFactory.cs" />
+    <Compile Include="Model\Factory\LawStrategyFactory.cs" />
     <Compile Include="Model\Factory\InitStrategyFactory.cs" />
     <Compile Include="Model\Factory\GridFactory.cs" />
     <Compile Include="Model\ICell.cs" />
@@ -110,8 +111,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\Laws\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
