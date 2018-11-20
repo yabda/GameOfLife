@@ -2,6 +2,9 @@
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
+using GameOfLife.View;
+using GameOfLife.Configuration.Initialisation;
+using GameOfLife.Model;
 
 namespace GameOfLife
 {

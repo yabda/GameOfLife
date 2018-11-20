@@ -1,5 +1,5 @@
 
-namespace GameOfLife
+namespace GameOfLife.Model
 {
     class Cell
     {

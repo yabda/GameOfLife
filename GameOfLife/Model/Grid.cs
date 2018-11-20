@@ -1,7 +1,7 @@
 
 using System;
 
-namespace GameOfLife
+namespace GameOfLife.Model
 {
     class Grid
     {

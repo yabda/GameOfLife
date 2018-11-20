@@ -7,7 +7,7 @@ using SFML;
 using SFML.Graphics;
 using SFML.System;
 
-namespace GameOfLife
+namespace GameOfLife.View
 {
     class DrawableObject : Drawable
     {
