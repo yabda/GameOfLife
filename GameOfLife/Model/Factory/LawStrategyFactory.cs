@@ -1,9 +1,4 @@
 ﻿using GameOfLife.Configuration.Laws;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameOfLife.Model.Factory
 {
@@ -15,6 +10,9 @@ namespace GameOfLife.Model.Factory
         Intervenant
     }
 
+    /**
+     * Factory permettant de générer des stratégies de fonctionnement
+     **/
     static class LawStrategyFactory
     {
         public static LawStrategy GetStrategy(LawType type)

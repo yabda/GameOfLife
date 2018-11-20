@@ -1,18 +1,16 @@
 ﻿using GameOfLife.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameOfLife.Configuration.Initialisation
 {
+    /**
+     * Classe gérant la stratégie d'initialisation
+     * Renvoit la grille selon la stratégie utilisée
+     **/
     class InitStratege
     {
         public static Grid Init(InitStrategy strat, Grid g)
         {
-            g = strat.Init(g);
-            return g;
+            return strat.Init(g);
         }
 
     }

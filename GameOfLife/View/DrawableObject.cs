@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SFML;
-using SFML.Graphics;
-using SFML.System;
+﻿using SFML.Graphics;
 
 namespace GameOfLife.View
 {
+    /*
+     * Objet drawable
+     */
     class DrawableObject : Drawable
     {
         private VertexArray matrice;

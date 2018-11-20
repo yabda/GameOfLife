@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GameOfLife.Model.Factory
+﻿namespace GameOfLife.Model.Factory
 {
+    /**
+     * Factory permettant de générer des grilles
+     **/
     static class GridFactory
     {
         public static Grid GetGrid(int size = 150)
