@@ -4,10 +4,10 @@ namespace GameOfLife.Model.Factory
 {
     public enum LawType
     {
-        Alo,
-        Conway,
-        Prof,
-        Intervenant
+        Conway = 1,
+        Alo = 2,
+        Prof = 3,
+        Intervenant = 4
     }
 
     /**
