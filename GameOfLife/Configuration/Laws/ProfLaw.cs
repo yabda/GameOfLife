@@ -1,4 +1,5 @@
 ﻿using GameOfLife.Model;
+using GameOfLife.Model.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace GameOfLife.Configuration.Laws
     {
         public Grid Update(Grid g)
         {
-            Grid newgrid = new Grid(g.Size);
+            Grid newgrid = GridFactory.GetGrid(g.Size);
             //penser a faire les cotés
             for (uint i = 1; i < g.Size - 1; ++i)
                 for (uint j = 1; j < g.Size - 1; ++j)
@@ -28,11 +29,11 @@ namespace GameOfLife.Configuration.Laws
 
                     if (0 < nbAlive && nbAlive < 3)
                     {
-                        newgrid.Cells[i, j] = new Cell(true);
+                        newgrid.Cells[i, j] = CellFactory.GetAlive();
                     }
                     if (nbAlive > 5 || nbAlive == 0)
                     {
-                        newgrid.Cells[i, j] = new Cell(false);
+                        newgrid.Cells[i, j] = CellFactory.GetDead();
 
                     }
                 }
