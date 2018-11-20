@@ -12,6 +12,5 @@ namespace GameOfLife.Configuration.Initialisation
         {
             return strat.Init(Size);
         }
-
     }
 }

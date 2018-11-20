@@ -17,9 +17,8 @@ namespace GameOfLife.Observer
             s.grid = LawStratege.Apply(s.grid, Screen.conf.LawStrategy);
             
             if(s.grid.Equals(backupGrid) || s.previousGrid.Equals(s.grid))
-            {
                 s.Over = true;
-            }
+
             s.previousGrid = backupGrid;
             s.matrice = Decorator.Decorate(s.grid, Screen.conf.pixelSize);
         }

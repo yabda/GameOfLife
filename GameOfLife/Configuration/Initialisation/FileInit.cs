@@ -14,7 +14,7 @@ namespace GameOfLife.Configuration.Initialisation
     {
         public Grid Init(int Fichier)
         {
-            var fileName = "InitNone";
+            var fileName = "InitAlo";
 
             var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $@"../../Configuration/Initialisation/" + fileName + ".txt");
             string[] lines;
@@ -33,31 +33,21 @@ namespace GameOfLife.Configuration.Initialisation
 
             int i = 0, j = 0;
 
-            for (var k = 0; k < Size; k++)
+            for (var k = 0; k < lines.Length; k++)
             { 
-                for (var l = 0; l < Size; l++)
+                for (var l = 0; l < lines[k].Length; l++)
                 {
-                    char c = '0';
-                    try
+                    char c= lines[k][l];
+                  
+                    if (c == '1')
                     {
-                        c = lines[k][l];
-                        if (c == '1')
-                        {
-                            g.Cells[j, i] = CellFactory.GetAlive();
+                        g.Cells[j, i] = CellFactory.GetAlive();
 
-                        }
-                        else
-                        {
-                            g.Cells[j, i] = CellFactory.GetDead();
-                        }
-                        //Console.WriteLine("bonjour");
                     }
-                    catch(Exception e)
+                    else
                     {
-                        //Console.WriteLine("coucou");
                         g.Cells[j, i] = CellFactory.GetDead();
                     }
-
                     j++;
                 }
                 i++;
