@@ -57,6 +57,11 @@
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Configuration\Initialisation\DamierInit.cs" />
+    <Compile Include="Configuration\Laws\AloLaw.cs" />
+    <Compile Include="Configuration\Laws\ConwayLaw.cs" />
+    <Compile Include="Configuration\Laws\LawStratege.cs" />
+    <Compile Include="Configuration\Laws\LawStrategy.cs" />
+    <Compile Include="Configuration\Laws\ProfLaw.cs" />
     <Compile Include="Model\Factory\CellFactory.cs" />
     <Compile Include="Model\Factory\InitStrategyFactory.cs" />
     <Compile Include="Model\Factory\GridFactory.cs" />

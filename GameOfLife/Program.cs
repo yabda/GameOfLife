@@ -5,6 +5,7 @@ using SFML.System;
 using GameOfLife.View;
 using GameOfLife.Configuration.Initialisation;
 using GameOfLife.Model;
+using GameOfLife.Configuration.Laws;
 
 namespace GameOfLife
 {
@@ -16,37 +17,7 @@ namespace GameOfLife
             window.Close();
         }
          
-        public static Grid Calculnextstep(Grid g)
-        {
-            Grid newgrid = new Grid(g.Size);
-            //penser a faire les cotés
-            for (uint i = 1; i < g.Size-1; ++i)
-                for (uint j = 1; j < g.Size-1; ++j)
-                {
-                    int vivant = 0;
-                    if (g.Cells[i - 1, j - 1].Alive) vivant++;
-                    if (g.Cells[i, j - 1].Alive) vivant++;
-                    if (g.Cells[i + 1, j - 1].Alive) vivant++;
-                    if (g.Cells[i - 1 , j].Alive) vivant++;
-                    if (g.Cells[i + 1, j].Alive) vivant++;
-                    if (g.Cells[i + 1, j + 1].Alive) vivant++;
-                    if (g.Cells[i + 1, j - 1].Alive) vivant++;
-                    if (g.Cells[i , j + 1].Alive) vivant++;
-                       
-                    if (0 < vivant && vivant < 3)
-                    {
-                        newgrid.Cells[i, j] = new Cell(true);
-                    }
-                    if( vivant > 5 || vivant == 0)
-                    {
-                        newgrid.Cells[i, j] = new Cell(false);
-
-                    }
-                }
-
-            
-            return newgrid;
-        }
+        
 
 
         static void Main()
@@ -60,7 +31,7 @@ namespace GameOfLife
             int size = 150;
             Grid g = new Grid(size);
 
-            g = InitStratege.Init(new TableInit(), g);
+            g = InitStratege.Init(new RandomInit(), g);
 
 
             
@@ -74,9 +45,9 @@ namespace GameOfLife
                 // Process events
                 app.DispatchEvents();
 
-                if (c.ElapsedTime.AsMilliseconds() > 5)
+                if (c.ElapsedTime.AsMilliseconds() > 100)
                 {
-                    g = Calculnextstep(g);
+                    g = LawStratege.Apply(g, new ConwayLaw());
                     matrice=Decorator.Decorate(g);
                     c.Restart();
                 }
