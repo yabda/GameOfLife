@@ -23,9 +23,5 @@ namespace GameOfLife.View
             // on dessine le tableau de vertex
             target.Draw(matrice, states);
         }
-
-       
-
     }
-
 }

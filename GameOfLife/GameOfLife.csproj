@@ -56,6 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Initialisation\DamierInit.cs" />
+    <Compile Include="Configuration\Laws\AloLaw.cs" />
+    <Compile Include="Configuration\Laws\ConwayLaw.cs" />
+    <Compile Include="Configuration\Laws\LawStratege.cs" />
+    <Compile Include="Configuration\Laws\LawStrategy.cs" />
+    <Compile Include="Configuration\Laws\ProfLaw.cs" />
     <Compile Include="View\Decorator.cs" />
     <Compile Include="View\DrawableObject.cs" />
     <Compile Include="Model\Cell.cs" />
@@ -99,8 +104,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\Laws\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

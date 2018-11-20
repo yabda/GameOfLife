@@ -23,7 +23,7 @@ namespace GameOfLife.Model
         public Grid()
         {
             Cells = new Cell[150, 150];
-            this.size = 150;
+            size = 150;
         }
 
 
