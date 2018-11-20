@@ -1,31 +1,24 @@
 ﻿using GameOfLife.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GameOfLife.Model.Factory;
 
 namespace GameOfLife.Configuration.Initialisation
 {
-    class DamierInit:InitStrategy
+    /**
+     * Classe de strategie d'initialisation
+     * Renvoit une grille en forme de damier
+     **/
+    class DamierInit : InitStrategy
     {
-        public Grid Init(Grid g) {
-            
-            for (int i = 0; i < 150; i++)
-            {
-                for (int j = 0; j < 150; j++)
+        public Grid Init(Grid g)
+        {
+            for (int i = 0; i < g.Size; i++)
+                for (int j = 0; j < g.Size; j++)
                 {
                     if (j % 2 == 0 && i % 2 ==0)
-                    {
-                        g.Cells[i, j] = new Cell(true);
-                    }
+                        g.Cells[i, j] = CellFactory.GetAlive();
                     else
-                    {
-                        g.Cells[i, j] = new Cell(false);
-
-                    }
+                        g.Cells[i, j] = CellFactory.GetDead();
                 }
-            }
             return g;
         }
 

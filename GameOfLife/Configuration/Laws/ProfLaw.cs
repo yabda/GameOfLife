@@ -8,12 +8,15 @@ using System.Threading.Tasks;
 
 namespace GameOfLife.Configuration.Laws
 {
-    class ProfLaw:LawStrategy
+    /**
+     * Classe de strategie de fonctionnement
+     * Utilise les règles du prof
+     **/
+    class ProfLaw : LawStrategy
     {
         public Grid Update(Grid g)
         {
             Grid newgrid = GridFactory.GetGrid(g.Size);
-            //penser a faire les cotés
             for (uint i = 1; i < g.Size - 1; ++i)
                 for (uint j = 1; j < g.Size - 1; ++j)
                 {
@@ -28,17 +31,10 @@ namespace GameOfLife.Configuration.Laws
                     if (g.Cells[i + 1, j + 1].Alive) nbAlive++;
 
                     if (0 < nbAlive && nbAlive < 3)
-                    {
                         newgrid.Cells[i, j] = CellFactory.GetAlive();
-                    }
                     if (nbAlive > 5 || nbAlive == 0)
-                    {
                         newgrid.Cells[i, j] = CellFactory.GetDead();
-
-                    }
                 }
-
-
             return newgrid;
         }
     }

@@ -11,9 +11,9 @@ namespace GameOfLife.Configuration.Laws
 {
     /**
      * Classe de strategie de fonctionnement
-     * Utilise les règles de l'intervenant
+     * Utilise les règles de Conway
      **/
-    class IntervenantLaw : LawStrategy
+    class ConwayLaw : LawStrategy
     {
         public Grid Update(Grid g)
         {
@@ -24,7 +24,7 @@ namespace GameOfLife.Configuration.Laws
                     int nbAlive = 0;
                     if (i != 0 && i != g.Size && j != 0 && j != g.Size)
                     {
-                        if (g.Cells[i - 1, j - 1].Alive) nbAlive++;
+                        if (g.Cells[i - 1, j - 1].Alive) nbAlive++; 
                         if (g.Cells[i - 1, j].Alive) nbAlive++;
                         if (g.Cells[i - 1, j + 1].Alive) nbAlive++;
                         if (g.Cells[i, j - 1].Alive) nbAlive++;
@@ -35,13 +35,13 @@ namespace GameOfLife.Configuration.Laws
                     }
                     if (g.Cells[i, j].Alive)
                     {
-                        if (nbAlive < 1 || nbAlive > 5)
+                        if (nbAlive < 2 || nbAlive > 3)
                             newgrid.Cells[i, j] = CellFactory.GetDead();
                         else
                             newgrid.Cells[i, j] = CellFactory.GetAlive();
                     }
                     else
-                        if (nbAlive > 1)
+                        if (nbAlive == 3)
                             newgrid.Cells[i, j] = CellFactory.GetAlive();
                 }
             return newgrid;

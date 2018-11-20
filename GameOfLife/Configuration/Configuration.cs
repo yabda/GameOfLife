@@ -18,8 +18,8 @@ namespace GameOfLife.Configuration
 
         public Configuration()
         {
-            InitStrategy = InitStrategyFactory.GetStrategy(InitType.Table);
-            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Intervenant);
+            InitStrategy = InitStrategyFactory.GetStrategy(InitType.Random);
+            LawStrategy = LawStrategyFactory.GetStrategy(LawType.Conway);
             Size = 250;
             Speed = 100;
         }

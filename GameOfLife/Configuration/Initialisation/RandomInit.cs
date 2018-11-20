@@ -1,33 +1,27 @@
 ﻿using GameOfLife.Model;
+using GameOfLife.Model.Factory;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameOfLife.Configuration.Initialisation
 {
-    class RandomInit:InitStrategy
+    /**
+     * Classe de strategie d'initialisation
+     * Renvoit une grille aléatoire
+     **/
+    class RandomInit : InitStrategy
     {
         public Grid Init(Grid g)
         {
             Random rand = new Random();
-            int size = g.Cells.GetLength(1);
 
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
+            for (int i = 0; i < g.Size; i++)
+                for (int j = 0; j < g.Size; j++)
                 {
-                    if (rand.Next(0, 99) <=2)
-                    {
-                        g.Cells[i, j] = new Cell(true);
-                    }
+                    if (rand.Next(0, 99) <= 2)
+                        g.Cells[i, j] = CellFactory.GetAlive();
                     else
-                    {
-                        g.Cells[i, j] = new Cell(false);
-                    }
+                        g.Cells[i, j] = CellFactory.GetDead();
                 }
-            }
             return g;
         }
 
