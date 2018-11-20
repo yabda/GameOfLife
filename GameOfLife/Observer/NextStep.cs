@@ -9,8 +9,8 @@ namespace GameOfLife.Observer
         public void Run(object sender, EventArgs e)
         {
             Screen s = (Screen)sender;
-            s.grid = LawStratege.Apply(s.grid, s.strat);
-            s.matrice = Decorator.Decorate(s.grid);
+            s.grid = LawStratege.Apply(s.grid, s.conf.LawStrategy);
+            s.matrice = Decorator.Decorate(s.grid, s.conf.pixelSize);
         }
     }
 }

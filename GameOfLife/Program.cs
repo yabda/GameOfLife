@@ -1,12 +1,4 @@
-﻿using System;
-using SFML.Graphics;
-using SFML.Window;
-using SFML.System;
-using GameOfLife.View;
-using GameOfLife.Configuration.Initialisation;
-using GameOfLife.Model;
-using GameOfLife.Configuration.Laws;
-using GameOfLife.Model.Factory;
+﻿using GameOfLife.View;
 
 namespace GameOfLife
 {
@@ -14,9 +6,11 @@ namespace GameOfLife
     {
         static void Main()
         {
-            Screen app = new Screen();
-            app.Init(new Configuration.Configuration());
+            Configuration.Configuration config = new Configuration.Configuration();
+            config.pixelSize = 10;
 
+            Screen app = new Screen();
+            app.Init(config);
             app.Run();
             
         } 

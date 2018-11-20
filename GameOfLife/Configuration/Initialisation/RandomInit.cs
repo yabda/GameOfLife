@@ -17,7 +17,7 @@ namespace GameOfLife.Configuration.Initialisation
             for (int i = 0; i < g.Size; i++)
                 for (int j = 0; j < g.Size; j++)
                 {
-                    if (rand.Next(0, 99) <= 2)
+                    if (rand.Next(0, 99) <= rand.Next(0, 99))
                         g.Cells[i, j] = CellFactory.GetAlive();
                     else
                         g.Cells[i, j] = CellFactory.GetDead();
