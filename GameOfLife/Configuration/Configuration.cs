@@ -29,5 +29,49 @@ namespace GameOfLife.Configuration
             pixelSize = 4;
         }
 
+        public void ReadConfiguration()
+        {
+            Console.Out.WriteLine("Bienvenue dans le wizard de configuration de jeu de la vie !");
+
+
+            Console.Out.WriteLine("Choix de la taille de la fenètre :");
+            bool largeur = false;
+            int x = 750, y = 750;
+            Console.Out.Write("Largeur (défaut 750px) : ");
+            while (largeur)
+            {
+                string ret = Console.In.ReadLine();
+                if(ret == "\n")
+                    largeur = true;
+                else
+                {
+                    try
+                    {
+                        x = int.Parse(ret);
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
+                }
+                
+            }
+            
+
+            Console.Out.Write("Hauteur (défaut 750px) : ");
+            y = Int32.Parse(Console.In.ReadLine());
+            WindowSize = new Vector2u((uint)x, (uint)y);
+
+            Console.Out.Write("Choix de la taille de chaque cellule en pixel : ");
+            pixelSize = Int32.Parse(Console.In.ReadLine());
+
+            Console.Out.Write("Largeur du tableau de cellule en nombre de cellule : ");
+            Size = Int32.Parse(Console.In.ReadLine());
+
+            Console.Out.Write("Vitesse du système (10 - lent, 100 - rapide) : ");
+            Speed = Int32.Parse(Console.In.ReadLine());
+
+        }
+
     }
 }
