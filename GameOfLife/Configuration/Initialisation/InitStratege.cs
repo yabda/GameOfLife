@@ -8,9 +8,9 @@ namespace GameOfLife.Configuration.Initialisation
      **/
     class InitStratege
     {
-        public static Grid Init(InitStrategy strat, Grid g)
+        public static Grid Init(InitStrategy strat, int Size)
         {
-            return strat.Init(g);
+            return strat.Init(Size);
         }
 
     }

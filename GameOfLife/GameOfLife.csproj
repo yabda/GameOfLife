@@ -91,6 +91,8 @@
     <Content Include="Configuration\Initialisation\InitFile.txt" />
     <Content Include="Configuration\Initialisation\InitFull.txt" />
     <Content Include="Configuration\Initialisation\InitNone.txt" />
+    <Content Include="Configuration\Initialisation\InitAlo.txt" />
+    <Content Include="Configuration\Initialisation\InitYanis.txt" />
     <Content Include="csfml-audio-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
