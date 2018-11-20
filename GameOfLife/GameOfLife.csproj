@@ -56,6 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Initialisation\DamierInit.cs" />
+    <Compile Include="Model\Factory\CellFactory.cs" />
+    <Compile Include="Model\Factory\GridFactory.cs" />
+    <Compile Include="Model\ICell.cs" />
+    <Compile Include="Model\IGrid.cs" />
     <Compile Include="View\Decorator.cs" />
     <Compile Include="View\DrawableObject.cs" />
     <Compile Include="Model\Cell.cs" />

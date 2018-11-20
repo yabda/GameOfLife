@@ -1,7 +1,7 @@
 
 namespace GameOfLife.Model
 {
-    class Cell
+    class Cell : ICell
     {
         public bool Alive { get; set; }
         

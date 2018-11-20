@@ -18,10 +18,10 @@ namespace GameOfLife
          
         public static Grid Calculnextstep(Grid g)
         {
-            Grid newgrid = new Grid(g.size);
+            Grid newgrid = new Grid(g.Size);
             //penser a faire les cotés
-            for (uint i = 1; i < g.size-1; ++i)
-                for (uint j = 1; j < g.size-1; ++j)
+            for (uint i = 1; i < g.Size-1; ++i)
+                for (uint j = 1; j < g.Size-1; ++j)
                 {
                     int vivant = 0;
                     if (g.Cells[i - 1, j - 1].Alive) vivant++;
