@@ -59,6 +59,7 @@
     <Compile Include="Configuration\Initialisation\DamierInit.cs" />
     <Compile Include="Configuration\Laws\AloLaw.cs" />
     <Compile Include="Configuration\Laws\ConwayLaw.cs" />
+    <Compile Include="Configuration\Laws\IntervenantLaw.cs" />
     <Compile Include="Configuration\Laws\LawStratege.cs" />
     <Compile Include="Configuration\Laws\LawStrategy.cs" />
     <Compile Include="Configuration\Laws\ProfLaw.cs" />
@@ -78,7 +79,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Configuration\Initialisation\TableInit.cs" />
+    <Compile Include="Observer\NextStep.cs" />
     <Compile Include="View\Screen.cs" />
+    <Compile Include="Observer\TickEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

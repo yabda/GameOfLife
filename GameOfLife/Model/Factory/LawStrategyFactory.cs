@@ -11,7 +11,8 @@ namespace GameOfLife.Model.Factory
     {
         Alo,
         Conway,
-        Prof
+        Prof,
+        Intervenant
     }
 
     static class LawStrategyFactory
@@ -26,6 +27,8 @@ namespace GameOfLife.Model.Factory
                     return new ConwayLaw();
                 case LawType.Prof:
                     return new ProfLaw();
+                case LawType.Intervenant:
+                    return new IntervenantLaw();
                 default:
                     return new ConwayLaw();
             }

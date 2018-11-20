@@ -2,6 +2,7 @@
 using GameOfLife.Configuration.Laws;
 using GameOfLife.Model;
 using GameOfLife.Model.Factory;
+using GameOfLife.Observer;
 using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
@@ -16,19 +17,25 @@ namespace GameOfLife.View
    class Screen
     {
         private RenderWindow App;
-        Grid g;
-        LawStrategy strat;
+        public Grid grid { get; set; }
+        public LawStrategy strat { get; set; }
         int Speed;
+        static event EventHandler Observable;
+        public DrawableObject matrice { get; set; }
+
 
         public void Init(Configuration.Configuration conf)
         {
             App = new RenderWindow(new VideoMode(750, 750), "LA VIE");
             App.Closed += new EventHandler(OnClose);
 
-            g = GridFactory.GetGrid(conf.Size);
-            g = InitStratege.Init(conf.InitStrategy,g);
+            grid = GridFactory.GetGrid(conf.Size);
+            grid = InitStratege.Init(conf.InitStrategy,grid);
             this.strat = conf.LawStrategy;
             this.Speed = conf.Speed;
+
+            var next = new NextStep();
+            Observable += new EventHandler(next.Run);
         }
         
         static void OnClose(object sender, EventArgs e)
@@ -41,28 +48,24 @@ namespace GameOfLife.View
         {
 
             Clock c = new Clock();
-            DrawableObject matrice = Decorator.Decorate(g);
+            matrice = Decorator.Decorate(grid);
 
             while (App.IsOpen)
             {
                 // Process events
                 App.DispatchEvents();
 
-                if (c.ElapsedTime.AsMilliseconds() > Speed)
+                if (c.ElapsedTime.AsMilliseconds() > 1/Speed)
                 {
-                    g = LawStratege.Apply(g,strat);
-                    matrice = Decorator.Decorate(g);
+                    Observable(this, new TickEvent());
                     c.Restart();
                 }
 
-                // Clear screen
                 App.Clear();
 
                 App.Draw(matrice);
-                // Update the window
                 App.Display();
-            } //End game loop
+            } 
         }
-
     }
 }
